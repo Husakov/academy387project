@@ -4,12 +4,11 @@
   <div class="project_content">
     <button (click)="currentTab = 'Active';" type="button" name="button" class="lightbutton">Active</button>
     <button (click)="currentTab = 'Archive';" type="button" name="button" class="lightbutton">Archive</button>
+    <div class="searchbar"><input class="search" type="text" [(ngModel)]="searchText" placeholder="Search projects..."></div>
     <button (click)="createProject();" type="button" name="button" class="createproject_button">Create Project</button>
     <br>
 
-    <div>
-      <input class="search" type="text" [(ngModel)]="searchText">
-    </div>
+
 
   </div>
 
@@ -19,11 +18,10 @@
 
 
       <div class="project_seperate"
-      *ngFor="let project of projects | search:['name', searchText]"
-      >
+        *ngFor="let project of projects | search:['name', searchText]">
           <p class="project_headtitle">(ID: {{project.id}}) {{project.name}}</p>
+          <!-- Project status circle -->
           <div class="project_statuscircle">
-            <!-- Project status circle -->
             <div
               *ngIf="project.status == 'Active'; else offlineStatus">
                 <p style="color: #79D687;">&#9679;</p>

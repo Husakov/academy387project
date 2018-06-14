@@ -85,3 +85,20 @@ p.project_desc {
   float: right;
   right: 10px;
 }
+
+.searchbar {
+  width: 200px;
+  height: 25px;
+  display: inline-block;
+  position: relative;
+  margin-left: 10px;
+}
+
+.searchbar input {
+  width: 200px;
+  height: 24px;
+  line-height: 22px;
+  font-size: 12px;
+  font-family: Arial;
+  padding-left: 10px;
+}
