@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProjectComponent implements OnInit {
 
   currentTab = "Active";
+  searchText = '';
 
   projects = [
     {
@@ -19,7 +20,7 @@ export class ProjectComponent implements OnInit {
     {
       id: 2,
       name: "Project 2",
-      desc: "Ovo je opis drugo projekta. Lorem ipsum, lorem ipsum, lorem ipsum",
+      desc: "Ovo je opis drugog projekta. Lorem ipsum, lorem ipsum, lorem ipsum",
       status: "Archive"
     };
   ]
@@ -31,8 +32,11 @@ export class ProjectComponent implements OnInit {
 
   createProject() {
     let newID = this.projects.length + 1;
-    this.projects.push({id: newID, name: "Project " + newID, desc: "", status: "Active"});
+    this.projects.push({id: newID, name: "Project " + newID, desc: "", status: "Active"}); // Ovdje dodajemo vrijednosti na niz.
+  }
 
+  onSelected(value) {
+    console.log(value);
   }
 
 }

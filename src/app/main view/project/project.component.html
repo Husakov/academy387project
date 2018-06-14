@@ -5,14 +5,22 @@
     <button (click)="currentTab = 'Active';" type="button" name="button" class="lightbutton">Active</button>
     <button (click)="currentTab = 'Archive';" type="button" name="button" class="lightbutton">Archive</button>
     <button (click)="createProject();" type="button" name="button" class="createproject_button">Create Project</button>
+    <br>
+
+    <div>
+      <input class="search" type="text" [(ngModel)]="searchText">
+    </div>
+
   </div>
 
   <div class="project_body">
     <div class="projects_container">
 
 
+
       <div class="project_seperate"
-        *ngFor="let project of projects">
+      *ngFor="let project of projects | search:['name', searchText]"
+      >
           <p class="project_headtitle">(ID: {{project.id}}) {{project.name}}</p>
           <div class="project_statuscircle">
             <!-- Project status circle -->
