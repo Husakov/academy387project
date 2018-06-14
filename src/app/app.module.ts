@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; // Dodana schema.
 import { RouterModule, Routes } from '@angular/router'; // Dodano za rute.
+import { FormsModule } from '@angular/forms'; // Dodano za forme.
 
 // App component.
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { PageNotFoundComponent } from './errorcomponent/pagenotfound/pagenotfoun
 import { ComplexComponent } from './main view/complex/complex.component';
 import { EntityComponent } from './main view/entity/entity.component';
 import { ProjectComponent } from './main view/project/project.component';
+import { SearchPipe } from './filters/search.pipe';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -45,10 +47,12 @@ const appRoutes: Routes = [
     AdminComponent,
     BIMModelComponent,
     DashboardComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
