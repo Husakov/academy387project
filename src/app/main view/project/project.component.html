@@ -1,5 +1,39 @@
 <app-header></app-header>
 
-<p>
-  project works!
-</p>
+<div class="wrapper">
+  <div class="project_content">
+    <button (click)="currentTab = 'Active';" type="button" name="button" class="lightbutton">Active</button>
+    <button (click)="currentTab = 'Archive';" type="button" name="button" class="lightbutton">Archive</button>
+    <button (click)="createProject();" type="button" name="button" class="createproject_button">Create Project</button>
+  </div>
+
+  <div class="project_body">
+    <div class="projects_container">
+
+
+      <div class="project_seperate"
+        *ngFor="let project of projects">
+          <p class="project_headtitle">(ID: {{project.id}}) {{project.name}}</p>
+          <div class="project_statuscircle">
+            <!-- Project status circle -->
+            <div
+              *ngIf="project.status == 'Active'; else offlineStatus">
+                <p style="color: #79D687;">&#9679;</p>
+            </div>
+            <ng-template #offlineStatus>
+                <p style="color: #333;">&#9679;</p>
+            </ng-template>
+          </div>
+
+
+          <p class="project_desc">{{project.desc}}</p>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  {{currentTab}}
+
+</div>
