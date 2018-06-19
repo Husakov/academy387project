@@ -7,15 +7,10 @@
     <div class="searchbar"><input class="search" type="text" [(ngModel)]="searchText" placeholder="Search projects..."></div>
     <button (click)="createProject();" type="button" name="button" class="createproject_button"><i class="fas fa-plus"></i> Create Project</button>
     <br>
-
-
-
   </div>
 
   <div class="project_body">
     <div class="projects_container">
-
-
 
       <div class="project_seperate"
         *ngFor="let project of projects | search:['name', searchText]">
@@ -30,13 +25,8 @@
                 <p style="color: #333;">&#9679;</p>
             </ng-template>
           </div>
-
-
           <p class="project_desc">{{project.desc}}</p>
       </div>
-
-
-
     </div>
   </div>
 

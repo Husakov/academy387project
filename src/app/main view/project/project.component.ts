@@ -14,15 +14,23 @@ export class ProjectComponent implements OnInit {
     {
       id: 1,
       name: "Project 1",
-      desc: "Ovo je opis prvog projekta.",
-      status: "Active"
+      desc: "Desc1",
+      status: "Active",
+      image: "https://www.google.ba",
+      author: "Author name",
+      dateCreated: "-/-/----",
+      dateUpdated: "-/-/----"
     },
     {
       id: 2,
       name: "Project 2",
-      desc: "Ovo je opis drugog projekta. Lorem ipsum, lorem ipsum, lorem ipsum",
-      status: "Archive"
-    };
+      desc: "Desc2",
+      status: "Archive",
+      image: "https://www.google.ba",
+      author: "Author name",
+      dateCreated: "-/-/----",
+      dateUpdated: "-/-/----"
+    }
   ]
 
   constructor() { }
