@@ -40,7 +40,15 @@ export class ProjectComponent implements OnInit {
 
   createProject() {
     let newID = this.projects.length + 1;
-    this.projects.push({id: newID, name: "Project " + newID, desc: "", status: "Active"}); // Ovdje dodajemo vrijednosti na niz.
+    this.projects.push({
+      id: newID, 
+      name: "Project " + newID, 
+      desc: "", 
+      status: "Active", 
+      image: "https://www.google.ba",
+      author: "Author name",
+      dateCreated: "-/-/----",
+      dateUpdated: "-/-/----"}); // Ovdje dodajemo vrijednosti na niz.
   }
 
   onSelected(value) {
