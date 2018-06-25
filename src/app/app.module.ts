@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; // Dodana schema.
 import { RouterModule, Routes } from '@angular/router'; // Dodano za rute.
 import { FormsModule } from '@angular/forms'; // Dodano za forme.
+import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 
 // App component.
 import { AppComponent } from './app.component';
@@ -52,11 +55,15 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    NoopAnimationsModule,
+    BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    MatButtonModule,
+    MatCheckboxModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
