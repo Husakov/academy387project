@@ -2,10 +2,10 @@
 
 <div class="wrapper">
   <div class="project_content">
-    <button (click)="currentTab = 'Active';" type="button" name="button" class="lightbutton"><i class="far fa-building"></i> Active</button>
-    <button (click)="currentTab = 'Archive';" type="button" name="button" class="lightbutton"><i class="fas fa-folder-open"></i> Archive</button>
+    <button mat-button color="primary" (click)="currentTab = 'Active';" type="button" name="button" class="projectbtn"><i class="far fa-building"></i> Active</button>
+    <button mat-button color="primary" (click)="currentTab = 'Archive';" type="button" name="button" class="projectbtn"><i class="fas fa-folder-open"></i> Archive</button>
     <div class="searchbar"><input class="search" type="text" [(ngModel)]="searchText" placeholder="Search projects..."></div>
-    <button (click)="createProject();" type="button" name="button" class="createproject_button"><i class="fas fa-plus"></i> Create Project</button>
+    <button mat-raised-button color="primary" (click)="createProject();" type="button" name="button" style="float: right; font-size: 12px;"><i class="fas fa-plus"></i> Create Project</button>
     <br>
   </div>
 
